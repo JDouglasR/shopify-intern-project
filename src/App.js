@@ -1,23 +1,37 @@
-import logo from './logo.svg';
-import './App.css';
+import {
+  Card,
+  CardContent,
+  CardHeader,
+  Container,
+  Grid,
+  TextField,
+} from "@material-ui/core";
+import "./App.css";
+import Results from "./components/Results";
+import Nominations from "./components/Nominations";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Container>
+        <h1>The Shoppies</h1>
+        <Card className="card">
+          <CardContent className="card-content">
+            <TextField
+              id="outlined-search"
+              label="Search Movie Title"
+              type="search"
+              variant="outlined"
+            />
+          </CardContent>
+        </Card>
+      </Container>
+      <Container>
+        <Grid container>
+          <Results />
+          <Nominations />
+        </Grid>
+      </Container>
     </div>
   );
 }
